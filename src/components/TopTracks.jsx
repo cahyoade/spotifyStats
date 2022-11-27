@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MusicItem from '../components/MusicItem';
+import constants from '../constants';
 
 export default function TopTracks(props){
     const [topTracks, setTopTracks] = useState([]);
@@ -14,13 +15,14 @@ export default function TopTracks(props){
         .then(data => {
             try{
                 if(data.error.status == 401){
-                    window.location = 'http://127.0.0.1:5173/';
+                    window.location = constants.url;
                 }
             }catch{
                 setTopTracks(data.items);
             }
         })
     }, [timeRange]);
+
 
     return (
         <div className="topTracks flex flex-col px-8 pt-12 w-full max-w-7xl bg-black pb-20">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BsSpotify } from 'react-icons/bs'
 import PersonIcon from '@mui/icons-material/Person';
+import constants from '../constants'
 
 export default function Profile(props){
     const [userData, setUserData] = useState('');
@@ -16,7 +17,7 @@ export default function Profile(props){
         .then(([userProfileData]) => {
             try{
                 if(userProfileData.error.status == 401){
-                    window.location = 'http://127.0.0.1:5173/'
+                    window.location = constants
                 }
             }catch{
                 setUserData(userProfileData)
@@ -25,9 +26,7 @@ export default function Profile(props){
 
     }, []);
 
-    
 
-    
     return (
         userData ? 
         <div className="profile w-screen min-h-screen px-6 pt-16 pb-24 bg-black flex flex-col items-center justify-center">

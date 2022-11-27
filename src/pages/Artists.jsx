@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import TopArtist from "../components/TopArtist";
-import Modal from "../components/ArtistModal";
+import ArtistModal from "../components/ArtistModal";
 
 
 export default function Music(props){
@@ -9,7 +9,7 @@ export default function Music(props){
 
     return (
         <div className=" h-screen flex flex-col items-center">
-            {showModal ? <Modal {...modalData} setShowModal={setShowModal}/> : <></>}
+            {showModal ? <ArtistModal accessToken={props.accessToken} {...modalData} setShowModal={setShowModal}/> : <></>}
             <TopArtist setModalData={setModalData} setShowModal={setShowModal} accessToken={props.accessToken}/>
         </div>
     )

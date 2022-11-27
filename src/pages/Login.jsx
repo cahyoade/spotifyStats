@@ -1,6 +1,7 @@
 import React from "react";
+import constants from '../constants'
 
-const AUTH_URL = 'https://accounts.spotify.com/authorize?response_type=token&client_id=647bf34d7074498aa76c40c655fad809&scope=user-top-read%20user-read-email%20user-read-private%20user-library-read&redirect_uri=https://ta-ppb-141eb.web.app/&show_dialog=true';
+const AUTH_URL = `https://accounts.spotify.com/authorize?response_type=token&client_id=647bf34d7074498aa76c40c655fad809&scope=user-top-read%20user-read-email%20user-read-private%20user-library-read&redirect_uri=${constants.url}&show_dialog=true`;
 
 export default function Login(){
     return (
