@@ -6,6 +6,7 @@ export default function TopTracks(props){
     const [topTracks, setTopTracks] = useState([]);
     const [timeRange, setTimeRange] = useState('short_term');
 
+    console.log(props)
     useEffect(() => {
         fetch(`https://api.spotify.com/v1/me/top/tracks?time_range=${timeRange}&limit=10`,
         {headers : {
@@ -13,12 +14,14 @@ export default function TopTracks(props){
             'Content-Type': 'application/json'
         }}).then(res => res.json())
         .then(data => {
+            console.log(data)
             try{
                 if(data.error.status == 401){
                     window.location = constants.url;
                 }
             }catch{
-                setTopTracks(data.items);
+
+                setTopTracks(data.items.reverse());
             }
         })
     }, [timeRange]);

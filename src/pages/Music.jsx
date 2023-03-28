@@ -8,7 +8,7 @@ export default function Music(props){
     const [modalData, setModalData] = useState({});
 
     return (
-        <div className=" h-screen flex flex-col items-center">
+        <div className=" h-min-screen flex flex-col items-center pb-24">
             {showModal ? <TrackModal accessToken={props.accessToken} {...modalData} setShowModal={setShowModal}/> : <></>}
             <TopTracks setModalData={setModalData} setShowModal={setShowModal} accessToken={props.accessToken}/>
         </div>

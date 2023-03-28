@@ -53,7 +53,6 @@ export default function Modal(props){
 
             {trackAudioFeatures ? 
             <div className="flex flex-col items-center w-full">
-                {/* <h2 className="text-xl font-bold mb-4">Track Analysis</h2> */}
                 <div className="flex justify-between w-full px-8 mb-8">
                     <p className="flex flex-col items-center">
                         <span className="font-bold text-lg">{key[trackAudioFeatures.key]}</span>
